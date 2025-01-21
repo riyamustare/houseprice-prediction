@@ -1,8 +1,10 @@
-__pycache__/
-*.pyc
-*.pyo
-.git/
-.venv/
-venv/
-notebooks/
 *.ipynb
+.ipynb_checkpoints/
+__pycache__/
+.git/
+*.log
+*.csv
+*.pkl
+*.h5
+node_modules/
+venv/
