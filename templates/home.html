@@ -15,7 +15,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .login {
@@ -25,7 +26,8 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 400px;
-      margin: 40px auto;
+      margin: 40px 20px;
+      box-sizing: border-box;
     }
 
     .login h1 {
@@ -40,14 +42,21 @@
       flex-direction: column;
     }
 
+    .login label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
     .login input[type="text"] {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       padding: 10px;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 5px;
       width: 100%;
       box-sizing: border-box;
+      background-color: #f9f9f9;
     }
 
     .login input[type="text"]:focus {
@@ -56,7 +65,7 @@
     }
 
     .btn {
-      background-color: #007BFF;
+      background-color: #4a5568;
       color: #fff;
       padding: 10px;
       font-size: 16px;
@@ -64,18 +73,15 @@
       border-radius: 5px;
       cursor: pointer;
       text-align: center;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #0056b3;
+      background-color: #2d3748;
     }
 
     .btn:active {
-      background-color: #004080;
-    }
-
-    .login form .btn {
-      margin-top: 10px;
+      background-color: #1a202c;
     }
 
     .login .prediction {
@@ -88,24 +94,36 @@
 </head>
 
 <body>
-  <div class="login margin-top:5px">
+  <div class="login">
     <h1>House Price Prediction</h1>
 
     <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict') }}" method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required />
-      <input type="text" name="ZN" placeholder="ZN" required />
-      <input type="text" name="INDUS" placeholder="INDUS" required />
-      <input type="text" name="CHAS" placeholder="CHAS" required />
-      <input type="text" name="NOX" placeholder="NOX" required />
-      <input type="text" name="RM" placeholder="RM" required />
-      <input type="text" name="Age" placeholder="Age" required />
-      <input type="text" name="DIS" placeholder="DIS" required />
-      <input type="text" name="RAD" placeholder="RAD" required />
-      <input type="text" name="TAX" placeholder="TAX" required />
-      <input type="text" name="PTRATIO" placeholder="PTRATIO" required />
-      <input type="text" name="B" placeholder="B" required />
-      <input type="text" name="LSTAT" placeholder="LSTAT" required />
+      <input type="text" id="CRIM" name="CRIM" placeholder="Enter CRIM value" required />
+
+      <input type="text" id="ZN" name="ZN" placeholder="Enter ZN value" required />
+
+      <input type="text" id="INDUS" name="INDUS" placeholder="Enter INDUS value" required />
+
+      <input type="text" id="CHAS" name="CHAS" placeholder="Enter CHAS value" required />
+
+      <input type="text" id="NOX" name="NOX" placeholder="Enter NOX value" required />
+
+      <input type="text" id="RM" name="RM" placeholder="Enter RM value" required />
+
+      <input type="text" id="Age" name="Age" placeholder="Enter Age value" required />
+
+      <input type="text" id="DIS" name="DIS" placeholder="Enter DIS value" required />
+
+      <input type="text" id="RAD" name="RAD" placeholder="Enter RAD value" required />
+
+      <input type="text" id="TAX" name="TAX" placeholder="Enter TAX value" required />
+
+      <input type="text" id="PTRATIO" name="PTRATIO" placeholder="Enter PTRATIO value" required />
+
+      <input type="text" id="B" name="B" placeholder="Enter B value" required />
+
+      <input type="text" id="LSTAT" name="LSTAT" placeholder="Enter LSTAT value" required />
 
       <button type="submit" class="btn">Predict</button>
     </form>
