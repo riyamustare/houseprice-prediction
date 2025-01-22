@@ -172,3 +172,4 @@ cython_debug/
 .pypirc
 
 linear_regression_implementation.ipynb
+.DS_Store
